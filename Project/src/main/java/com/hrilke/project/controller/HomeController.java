@@ -25,7 +25,7 @@ public class HomeController {
 
 		return "redirect:/home";
 	}
-
+ 
 	@GetMapping("/home")
 	public String home2(Model model) {
 		List<BoardInfoBean> board_list = topService.getTopMenuList();
