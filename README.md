@@ -2,15 +2,16 @@
 📖 추가/공부할 기능
 	<ul>
 		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자
-		<li>멀티쓰레드 공부하고 적용해보자
+		<li>멀티쓰레드 공부하고 적용해보자 : 이벤트 버튼으로 예제를 생성해보자
 	</ul>
 <hr>
 <h2>🌈주요 로직</h2>
 
-//1번은 작성중! 
-1. Cache를 이용한 간단한 트래픽 처리 [대규모 트래픽처리 첫번째 공부]
-	- Interceptor를 이용해서 cache-control 시간 설정 [📝🔗]
-
+1. Cache를 이용한 간단한 트래픽 처리
+	- Interceptor를 이용해서 cache-control 시간 설정 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/interceptor/CacheInterceptor.java#L15)
+	- 캐시 유효시간 내에는 메모리 캐시 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/resources/upload/cache2.png)
+	- 캐시 유효시간이 초과되면 요청 시 if-modified-since를 보내서 서버측 데이터가 갱신되었는지
+	  Last-Modified와 비교 검증!  갱신 되지 않았다면 304 상태코드! [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/resources/upload/cache3.png)
 
 2. 동기 / 비동기 사용한 댓글 처리
     - Ajax로 데이터 전송 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/WEB-INF/views/board/read.jsp#L16)
