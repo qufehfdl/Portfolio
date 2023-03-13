@@ -44,7 +44,7 @@ public class ReplyController {
 		replyBean.setReply(replyModify);
 		replyBean.setReply_num(reply_num);
 		replyService.modify(replyBean);
-		return replyBean;
+		return replyBean; 
 	}
 
 }

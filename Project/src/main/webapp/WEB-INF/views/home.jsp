@@ -9,7 +9,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <meta charset="UTF-8">
 </head>
- 
+
 <script>
 	function yesterDay() {
 		$.ajax({
@@ -48,10 +48,21 @@
 			}
 		})
 	}
+	
+	function myEvent() {
+		$.ajax({
+			url : '${root}event',
+			type : 'get',
+			dataType : 'text',
+			success : function(result) {
+				alert('회원님의 번호는 : ' + result);
+		}})
+	}
 </script>
 <body>
 	<c:import url="/WEB-INF/views/include/top.jsp"></c:import>
-	🐣 세션시간 1분 [현재 꺼둠] <br>
+	🐣 세션시간 1분 [현재 꺼둠]
+	<br>
 	<br> 🧐 추가/공부할 기능
 	<ul>
 		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자
@@ -68,13 +79,19 @@
 	🌈기상예보🌈
 	<br>
 	<br>
-	<div id="public_api_2"></div><br>
-	<div id="public_api_3"></div><br>
-	<div id="public_api_4"></div><br>
+	<div id="public_api_2"></div>
+	<br>
+	<div id="public_api_3"></div>
+	<br>
+	<div id="public_api_4"></div>
+	<br>
 	<hr>
 
 	<input type="button" id='weather' value="어제 날씨" onclick="yesterDay()">
 	<input type="button" id='weather' value="기상 예보" onclick="foreCast()">
+	<hr>
+	🌀 동시성 공부 &nbsp;&nbsp;&nbsp;
+	<input type="button" onclick="myEvent()" value="동시성 문제 이벤트">
 
 
 </body>

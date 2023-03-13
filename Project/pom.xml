@@ -41,11 +41,11 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.9.7</version>
-</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.7</version>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>
@@ -97,7 +97,7 @@
 			<version>1</version>
 		</dependency>
 
-			<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -126,6 +126,8 @@
 			<scope>test</scope>
 		</dependency>
 		
+		
+
 		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -133,8 +135,8 @@
 			<version>1.18.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
-				<dependency>
+
+		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>2.0.1.Final</version>
@@ -171,7 +173,15 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>2.0.3</version>
 		</dependency>
-		
+
+<!-- 목 -->
+		<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>3.8.0</version>
+    <scope>test</scope>
+</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -209,9 +219,10 @@
 					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
- 
-				<!-- =======================  추가  ======================== -->
-			<!-- 추가 안하면 web.xml is missing and <failOnMissingWebXml> is set to true 에러 발생 -->
+
+			<!-- ======================= 추가 ======================== -->
+			<!-- 추가 안하면 web.xml is missing and <failOnMissingWebXml> is set to true 
+				에러 발생 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>

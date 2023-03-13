@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="h.t.h">
+	<logger name="com.hrilke.project">
 		<level value="info" />
 	</logger>
 	

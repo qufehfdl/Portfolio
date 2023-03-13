@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 @PropertySource("/WEB-INF/properties/option.properties")
 @RequiredArgsConstructor
 public class BoardService {
-
+	
 	@Value("${path.upload}")
 	private String path_upload;
 

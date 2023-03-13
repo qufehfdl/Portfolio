@@ -1,6 +1,8 @@
 package com.hrilke.project.service;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
 import com.hrilke.project.beans.UserBean;
@@ -11,14 +13,22 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class UserService {
-
+	private final ThreadPoolTaskExecutor executor;
 	private final UserDao userDao;
 
 	@Qualifier("loginUserBean")
 	private final UserBean loginUserBean;
 
+	// 회원 가입
+	// 쓰레드 풀 개수를 조정
+	@Async
 	public void addUserInfo(UserBean joinUserBean) {
-		userDao.addUserInfo(joinUserBean);
+		executor.execute(new Runnable() {
+			@Override
+			public void run() {
+				userDao.addUserInfo(joinUserBean);
+			}
+		});
 	}
 
 	// 아이디 중복 확인
