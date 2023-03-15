@@ -1,6 +1,7 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var='root' value='${pageContext.request.contextPath }/' />
 <html>
 <head>
 <script
@@ -35,28 +36,68 @@
 			dataType : 'json',
 			success : function(result) {
 				$("#public_api_2").text(
-						'🌤️ 4일 후 오전 하늘은'	+ result.response.body.items.item[0].wf4Am	+ ' ☔ 4일 후 오전 강수 확률'+ result.response.body.items.item[0].rnSt4Am + '% 입니다'
-						+'🌤️ 4일 후 오후 하늘은 '+ result.response.body.items.item[0].wf4Pm + ' ☔ 4일 후 오후 강수 확률 '+ result.response.body.items.item[0].rnSt4Pm + '% 입니다');
-						
+						'🌤️ 4일 후 오전 하늘은'
+								+ result.response.body.items.item[0].wf4Am
+								+ ' ☔ 4일 후 오전 강수 확률'
+								+ result.response.body.items.item[0].rnSt4Am
+								+ '% 입니다' + '🌤️ 4일 후 오후 하늘은 '
+								+ result.response.body.items.item[0].wf4Pm
+								+ ' ☔ 4일 후 오후 강수 확률 '
+								+ result.response.body.items.item[0].rnSt4Pm
+								+ '% 입니다');
+
 				$("#public_api_3").text(
-						 '🌤️ 5일 후 오전 하늘은 '	+ result.response.body.items.item[0].wf5Am+' ☔ 5일 후 오전 강수 확률 '+ result.response.body.items.item[0].rnSt5Am + '% 입니다'
-						+'🌤️ 5일 후 오후 하늘은 '	+ result.response.body.items.item[0].wf5Pm+ ' ☔ 5일 후 오후 강수 확률 '+ result.response.body.items.item[0].rnSt5Pm+'% 입니다');
-						
-				$("#public_api_4").text(		
-						'🌤️ 6일 후 오전 하늘은 '	+ result.response.body.items.item[0].wf6Am+ ' ☔ 6일 후 오전 강수 확률 '+ result.response.body.items.item[0].rnSt6Am + '% 입니다'
-						+ '🌤️ 6일 후 오후 하늘은 '	+ result.response.body.items.item[0].wf6Pm	+ ' ☔ 6일 후 오후 강수 확률 '+ result.response.body.items.item[0].rnSt6Pm+ '% 입니다');
+						'🌤️ 5일 후 오전 하늘은 '
+								+ result.response.body.items.item[0].wf5Am
+								+ ' ☔ 5일 후 오전 강수 확률 '
+								+ result.response.body.items.item[0].rnSt5Am
+								+ '% 입니다' + '🌤️ 5일 후 오후 하늘은 '
+								+ result.response.body.items.item[0].wf5Pm
+								+ ' ☔ 5일 후 오후 강수 확률 '
+								+ result.response.body.items.item[0].rnSt5Pm
+								+ '% 입니다');
+
+				$("#public_api_4").text(
+						'🌤️ 6일 후 오전 하늘은 '
+								+ result.response.body.items.item[0].wf6Am
+								+ ' ☔ 6일 후 오전 강수 확률 '
+								+ result.response.body.items.item[0].rnSt6Am
+								+ '% 입니다' + '🌤️ 6일 후 오후 하늘은 '
+								+ result.response.body.items.item[0].wf6Pm
+								+ ' ☔ 6일 후 오후 강수 확률 '
+								+ result.response.body.items.item[0].rnSt6Pm
+								+ '% 입니다');
 			}
 		})
 	}
-	
 	function myEvent() {
 		$.ajax({
-			url : '${root}event',
+			url : '${root}synchronized',
 			type : 'get',
 			dataType : 'text',
 			success : function(result) {
-				alert('회원님의 번호는 : ' + result);
-		}})
+				alert('회원님의 이벤트 번호는 : ' + result);
+			}
+		})
+	}
+
+	function myReset() {
+		$.ajax({
+			url : '${root}reset',
+			type : 'get',
+		})
+	}
+
+	function myThreadLocal(content) {
+		var content = $("#content").val();
+		$.ajax({
+			url : '${root}myThreadLocal/' + content,
+			type : 'get',
+			dataType : 'text',
+			success : function(result) {
+				alert(result)
+			}
+		})
 	}
 </script>
 <body>
@@ -68,8 +109,6 @@
 		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자
 		<li>멀티쓰레드 공부하고 적용해보자
 	</ul>
-	<br>
-	<br>
 	<hr>
 	🕐어제 🌤️날씨☔️
 	<br>
@@ -90,9 +129,15 @@
 	<input type="button" id='weather' value="어제 날씨" onclick="yesterDay()">
 	<input type="button" id='weather' value="기상 예보" onclick="foreCast()">
 	<hr>
-	🌀 동시성 공부 &nbsp;&nbsp;&nbsp;
-	<input type="button" onclick="myEvent()" value="동시성 문제 이벤트">
-
+	🌀 동시성 공부
+	<ul>
+		<li>synchronized 사용 <input type="button" onclick="myEvent()"
+			value="동시성 문제 이벤트">&nbsp;&nbsp; <input type="button"
+			onclick="myReset()" value="번호 리셋"><br>
+		<br>
+		<li>ThreadLocal 사용 <input type="text" id="content"> <input
+			type="button" onclick="myThreadLocal('content')" value="맵	">
+	</ul>
 
 </body>
 </html>

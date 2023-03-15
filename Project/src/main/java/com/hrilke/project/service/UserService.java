@@ -13,22 +13,14 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class UserService {
-	private final ThreadPoolTaskExecutor executor;
 	private final UserDao userDao;
 
 	@Qualifier("loginUserBean")
 	private final UserBean loginUserBean;
 
 	// 회원 가입
-	// 쓰레드 풀 개수를 조정
-	@Async
 	public void addUserInfo(UserBean joinUserBean) {
-		executor.execute(new Runnable() {
-			@Override
-			public void run() {
-				userDao.addUserInfo(joinUserBean);
-			}
-		});
+		userDao.addUserInfo(joinUserBean);
 	}
 
 	// 아이디 중복 확인

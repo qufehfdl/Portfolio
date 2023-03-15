@@ -171,7 +171,7 @@ public class ServletAppContext implements WebMvcConfigurer {
 		CacheInterceptor cacheInterceptor = new CacheInterceptor();
 		InterceptorRegistration reg4 = registry.addInterceptor(cacheInterceptor);
 		reg4.addPathPatterns("/board/read");
-
+		
 	}
  
 	// 자바 방식으로 스프링세팅시 @PropertySource("/WEB-INF/properties/db.properties") 와

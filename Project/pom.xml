@@ -41,6 +41,35 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>6.0.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.21.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- 잭슨 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -125,8 +154,8 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
+
+
 
 		<!-- lombok -->
 		<dependency>
@@ -174,13 +203,13 @@
 			<version>2.0.3</version>
 		</dependency>
 
-<!-- 목 -->
+		<!-- 목 -->
 		<dependency>
-    <groupId>org.mockito</groupId>
-    <artifactId>mockito-core</artifactId>
-    <version>3.8.0</version>
-    <scope>test</scope>
-</dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.8.0</version>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 	<build>

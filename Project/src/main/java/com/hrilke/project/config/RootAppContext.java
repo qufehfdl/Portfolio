@@ -5,13 +5,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.hrilke.project.beans.UserBean;
+import com.hrilke.project.beans.concurrent.ConcurrentTestBean;
 
 // bean 정의하는 클래스
 @Configuration
@@ -28,15 +27,15 @@ public class RootAppContext extends HandlerInterceptorAdapter {
 //		session.setMaxInactiveInterval(60);
 		return new UserBean();
 	}
-
+	
+	//동시성 공부
 	@Bean
-	public TaskExecutor taskExecutor() {
-		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-		executor.setCorePoolSize(30);
-		executor.setMaxPoolSize(110);
-		executor.setQueueCapacity(50);
-		executor.setThreadNamePrefix("test-taehwa-thread-");
-		executor.initialize();
-		return executor;
+	public ConcurrentTestBean concurrentTestBean() {
+		return new ConcurrentTestBean();
+	}
+	
+	@Bean
+	public ThreadLocal<ConcurrentTestBean> threadLocal(){
+		return new ThreadLocal<ConcurrentTestBean>();
 	}
 }
