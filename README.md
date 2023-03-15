@@ -33,8 +33,10 @@
     - Interceptor 등록 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ServletAppContext.java#L158)
     - 🔎실제 작동 [📝🔗](http://54.180.140.215:8080/Project/board/read)
       
-6. 멀티쓰레드 동시성 문제 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L16)
-
+6. 멀티쓰레드 동시성 문제
+    - synchronized 키워드 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L16)
+    - ThreadLocal 사용 (작성중)
+  
 <h2>🌈기억나는 문제 해결 or 에러</h2>
 
 1. @RequiredArgsConstructor @Value 동시 사용시 순환참조 에러
