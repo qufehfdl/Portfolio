@@ -130,7 +130,7 @@
 	<input type="button" id='weather' value="기상 예보" onclick="foreCast()">
 	<hr>
 	🌀 동시성 공부
-	<ul>
+	<ul> 
 		<li>synchronized 사용 <input type="button" onclick="myEvent()"
 			value="동시성 문제 이벤트">&nbsp;&nbsp; <input type="button"
 			onclick="myReset()" value="번호 리셋"><br>
