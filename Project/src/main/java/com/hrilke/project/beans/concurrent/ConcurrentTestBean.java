@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ConcurrentTestBean {
-	private String data;
+	private String str;
 }

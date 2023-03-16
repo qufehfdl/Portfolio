@@ -81,17 +81,35 @@
 		})
 	}
 
-	function myReset() {
-		$.ajax({
-			url : '${root}reset',
-			type : 'get',
-		})
-	}
-
 	function myThreadLocal(content) {
 		var content = $("#content").val();
 		$.ajax({
 			url : '${root}myThreadLocal/' + content,
+			type : 'get',
+			dataType : 'text',
+			success : function(result) {
+				alert(result)
+			}
+		})
+	}
+
+	function myAtomic(str) {
+		var str = $("#str").val();
+		$.ajax({
+			url : '${root}myAtomic/' + str,
+			type : 'get',
+			dataType : 'text',
+			success : function(result) {
+				alert(result)
+			}
+		})
+	}
+	
+	function myConcurrent() {
+		var str = $("#concurrent").val();
+		var myid = $("#id").val;
+		$.ajax({
+			url : '${root}myConcurrent/' + str,
 			type : 'get',
 			dataType : 'text',
 			success : function(result) {
@@ -129,14 +147,27 @@
 	<input type="button" id='weather' value="어제 날씨" onclick="yesterDay()">
 	<input type="button" id='weather' value="기상 예보" onclick="foreCast()">
 	<hr>
+	
 	🌀 동시성 공부
-	<ul> 
-		<li>synchronized 사용 <input type="button" onclick="myEvent()"
-			value="동시성 문제 이벤트">&nbsp;&nbsp; <input type="button"
-			onclick="myReset()" value="번호 리셋"><br>
-		<br>
+	<ul>
 		<li>ThreadLocal 사용 <input type="text" id="content"> <input
-			type="button" onclick="myThreadLocal('content')" value="맵	">
+			type="button" onclick="myThreadLocal('content')" value="ThreadLocal"><br>
+			<br>
+			
+			
+		<li>ConcurrentHashMap 사용 
+		
+		<input type="text" id="concurrent">
+		<c:set var="id" value="aaa"></c:set>
+		 <input	type="button" onclick="myConcurrent()" value=ConcurrentHashMap>
+		 
+			
+			
+		<li>Atomic Class 사용 <input type="text" id="str"> <input
+			type="button" onclick="myAtomic('str')" value="Atomic"><br>
+			<br>
+		<li>synchronized 키워드 사용 <input type="button" onclick="myEvent()"
+			value="동시성 문제 이벤트"><br><br>
 	</ul>
 
 </body>

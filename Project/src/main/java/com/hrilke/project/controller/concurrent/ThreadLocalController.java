@@ -13,24 +13,24 @@ import lombok.RequiredArgsConstructor;
 public class ThreadLocalController {
 
 	private final ThreadLocal<ConcurrentTestBean> threadLocal;
+	// threadLocal은 스레드에 고유한 값이며 한 스레드에서 값을 설정하면 다른 스레드에서는 같은 값을 가져올 수 없다!!
 
 	@GetMapping("/myThreadLocal/{content}")
 	public String myThreadLocal(@PathVariable String content) {
 
+		threadLocal.set(new ConcurrentTestBean());
 		ConcurrentTestBean concurrentTestBean = threadLocal.get();
-		if (concurrentTestBean == null) {
-			concurrentTestBean = new ConcurrentTestBean();
-			threadLocal.set(concurrentTestBean);
-		}
-		concurrentTestBean.setData(content);
+		concurrentTestBean.setStr(content);
+
+		// 메모리 누수 방지
 		threadLocal.remove();
 
+		// 2초간 정지
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
-		return concurrentTestBean.getData();
+		return concurrentTestBean.getStr();
 	}
 }
