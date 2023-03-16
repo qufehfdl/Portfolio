@@ -1,38 +1,45 @@
-<h3>😊 개인 공부를 정리해 두고 연습을 하는 프로젝트 입니다 <a href="http://54.180.140.215:8080/Project/home">📌</a> </h3>
+<h3>😊 개인 공부를 정리해 두고 연습을 하는 프로젝트 입니다 </h3>
+
+ - AWS를 이용해 배포 [📝🔗](http://54.180.140.215:8080/Project/home)
+
 📖 추가/공부할 기능
 	<ul>
-		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자
-		<li>멀티쓰레드 공부하고 적용해보자 : 이벤트 버튼으로 예제를 생성해보자 (작성중)
+		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자 [작성중]
+		<li>멀티쓰레드 공부하고 적용해보자 : 이벤트 버튼으로 예제를 생성해보자 [작성중]
 	</ul>
 <hr>
 <h2>🌈주요 로직</h2>
 
-1. Cache를 이용한 간단한 트래픽 처리
+1. (공부/작성중)Cache를 이용한 간단한 트래픽 처리
 	- Interceptor를 이용해서 cache-control 시간 설정 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/interceptor/CacheInterceptor.java#L15)
 	- 캐시 유효시간 내에는 메모리 캐시 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/resources/upload/cache2.png)
 	- 캐시 유효시간이 초과되면 요청 시 if-modified-since를 보내서 서버측 데이터가 갱신되었는지
 	  Last-Modified와 비교 검증!  갱신 되지 않았다면 304 상태코드! [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/resources/upload/cache3.png)
+      
+2. (공부/작성중)멀티쓰레드 동시성 문제
+    - synchronized 키워드 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L16)
+    - ThreadLocal 사용 (작성중)
 
-2. 동기 / 비동기 사용한 댓글 처리
+3. 동기 / 비동기 사용한 댓글 처리
     - Ajax로 데이터 전송 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/WEB-INF/views/board/read.jsp#L16)
     - @PathVariable로 받아 처리 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/ReplyController.java#L39)
     - 🔎실제 작동 [📝🔗](http://54.180.140.215:8080/Project/board/read?board_category=5&content_num=1)
 
-3. 공공API를 활용한 로직
+4. 공공API를 활용한 로직
     - RestTemplate을 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/RestAPIController.java#L47)
     - Ajax 이용해 메인 화면에 출력 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/WEB-INF/views/home.jsp#L14)
     - 🔎실제 작동 [📝🔗](http://54.180.140.215:8080/Project/home)
       
-4. 유효성 검사 : 회원가입,로그인 등등 (아래는 회원가입 관련 유효성검사 입니다)
+5. 유효성 검사 : 회원가입,로그인 등등 (아래는 회원가입 관련 유효성검사 입니다)
     - 제한 범위 설정 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/beans/UserBean.java#L13)
     - Validator 추가 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/validation/UserValidator.java#L16)
     - 🔎실제 작동 [📝🔗](http://54.180.140.215:8080/Project/user/join)
 
-5. 인터셉터 처리 : 사용자가 URL을 직접 작성하고 접근하거나 로그인이 아닌 상태에서 접근할 수 없는곳에 접근 할 때
+6. 인터셉터 처리 : 사용자가 URL을 직접 작성하고 접근하거나 로그인이 아닌 상태에서 접근할 수 없는곳에 접근 할 때
     - preHandle 생성 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/interceptor/CheckLoginInterceptor.java#L21)
     - Interceptor 등록 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ServletAppContext.java#L158)
     - 🔎실제 작동 [📝🔗](http://54.180.140.215:8080/Project/board/read)
-      
+  
 <h2>🌈기억나는 문제 해결 or 에러</h2>
 
 1. @RequiredArgsConstructor @Value 동시 사용시 순환참조 에러
