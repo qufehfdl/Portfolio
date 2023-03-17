@@ -107,7 +107,6 @@
 	
 	function myConcurrent() {
 		var str = $("#concurrent").val();
-		var myid = $("#id").val;
 		$.ajax({
 			url : '${root}myConcurrent/' + str,
 			type : 'get',
@@ -123,7 +122,7 @@
 	🐣 세션시간 1분 [현재 꺼둠]
 	<br>
 	<br> 🧐 추가/공부할 기능
-	<ul>
+	<ul> 
 		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자
 		<li>멀티쓰레드 공부하고 적용해보자
 	</ul>
@@ -147,28 +146,5 @@
 	<input type="button" id='weather' value="어제 날씨" onclick="yesterDay()">
 	<input type="button" id='weather' value="기상 예보" onclick="foreCast()">
 	<hr>
-	
-	🌀 동시성 공부
-	<ul>
-		<li>ThreadLocal 사용 <input type="text" id="content"> <input
-			type="button" onclick="myThreadLocal('content')" value="ThreadLocal"><br>
-			<br>
-			
-			
-		<li>ConcurrentHashMap 사용 
-		
-		<input type="text" id="concurrent">
-		<c:set var="id" value="aaa"></c:set>
-		 <input	type="button" onclick="myConcurrent()" value=ConcurrentHashMap>
-		 
-			
-			
-		<li>Atomic Class 사용 <input type="text" id="str"> <input
-			type="button" onclick="myAtomic('str')" value="Atomic"><br>
-			<br>
-		<li>synchronized 키워드 사용 <input type="button" onclick="myEvent()"
-			value="동시성 문제 이벤트"><br><br>
-	</ul>
-
 </body>
 </html>
