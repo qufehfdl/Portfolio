@@ -19,7 +19,8 @@
 2. (공부/작성중)멀티쓰레드 동시성 문제
     - ThreadLocal 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/ThreadLocalController.java#L21)
     - Atomic 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/AtomicInstanceController.java#L35)
-    - ThreadPool 사용 (작성중)
+    - ThreadPool 사용 (공부/작성중)
+    - ConcurrentHashMap (공부/작성중)
     - synchronized 키워드 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L12)
 
 3. 동기 / 비동기 사용한 댓글 처리
