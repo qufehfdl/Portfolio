@@ -160,20 +160,20 @@ public class ServletAppContext implements WebMvcConfigurer {
 		InterceptorRegistration reg2 = registry.addInterceptor(new CheckLoginInterceptor(loginUserBean));
 		reg2.addPathPatterns("/user/modify", "/user/logout", "/board/*");
 		// 이 경로는 제외
-		reg2.excludePathPatterns("/board/main", "/board/searchList","/board/read");
+		reg2.excludePathPatterns("/board/main", "/board/searchList", "/board/read");
 
 		// 수정 삭제를 잘못된 접근으로 이용할 시
 		CheckWriterInterceptor checkWriterInterceptor = new CheckWriterInterceptor(loginUserBean, boardService);
 		InterceptorRegistration reg3 = registry.addInterceptor(checkWriterInterceptor);
 		reg3.addPathPatterns("/board/modify", "/board/delete");
 
-		//cache 처리
+		// cache 처리
 		CacheInterceptor cacheInterceptor = new CacheInterceptor();
 		InterceptorRegistration reg4 = registry.addInterceptor(cacheInterceptor);
 		reg4.addPathPatterns("/board/read");
-		
+
 	}
- 
+
 	// 자바 방식으로 스프링세팅시 @PropertySource("/WEB-INF/properties/db.properties") 와
 	// 메세지 등록코드와 충돌이 나서 인식이 안되므로 프로퍼티소스등록과 메세지소스등록을 구분해서 별도로 관리해주는 코드 작성
 	@Bean

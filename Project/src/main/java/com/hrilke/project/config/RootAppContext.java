@@ -1,6 +1,5 @@
 package com.hrilke.project.config;
 
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
 
 import javax.servlet.http.HttpSession;
@@ -8,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.context.annotation.SessionScope;
 
 import com.hrilke.project.beans.UserBean;
@@ -34,26 +32,9 @@ public class RootAppContext {
 	public ThreadLocal<ConcurrentTestBean> threadLocal() {
 		return new ThreadLocal<ConcurrentTestBean>();
 	}
+
 	@Bean
 	public AtomicReference<ConcurrentTestBean> atomicReference() {
 		return new AtomicReference<ConcurrentTestBean>();
-	}
-	@Bean
-	public ConcurrentHashMap<String, String> concurrentHashMap(){
-		return new ConcurrentHashMap<String, String>();
-	}
-	@Bean
-	public ConcurrentTestBean concurrentTestBean() {
-		return new ConcurrentTestBean();
-	}
-	
-	@Bean
-	public ThreadPoolTaskExecutor executor() {
-		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-		executor.setThreadNamePrefix("taehwa-");
-		executor.setCorePoolSize(1);
-		executor.setMaxPoolSize(1);
-		executor.initialize();
-		return executor;
 	}
 }

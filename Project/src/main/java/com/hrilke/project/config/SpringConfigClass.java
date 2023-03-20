@@ -23,7 +23,7 @@ public class SpringConfigClass extends AbstractAnnotationConfigDispatcherServlet
 	// 프로젝트에서 사용할 Bean들을 정의기 위한 클래스를 지정
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { RootAppContext.class };
+		return new Class[] { RootAppContext.class , AsyncConfig.class };
 	}
 	
 	// 파라미터 인코딩 필터 설정
