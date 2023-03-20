@@ -1,25 +1,20 @@
 <h3>😊 개인 공부를 정리해 두고 연습을 하는 프로젝트 입니다 </h3>
 
  - AWS를 이용해 배포 [📝🔗](http://54.180.140.215:8080/Project/home)
-
-📖 추가/공부할 기능
-	<ul>
-		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자 [작성중]
-		<li>멀티쓰레드 공부하고 적용해보자 : 이벤트 버튼으로 예제를 생성해보자 [작성중]
-	</ul>
 	
 <hr>
 <h2>🌈주요 로직</h2>
 
-1. (공부/작성중)트래픽 처리
-	- Interceptor를 이용해서 cache-control 시간 설정 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/interceptor/CacheInterceptor.java#L15)
+1. 트래픽 처리
+	- ThreadPool 사용하기 위해 ThreadPoolTaskExecutor 설정[📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/AsyncConfig.java#L14)
+	- 실행 속도 확인[📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/ThreadPoolController.java#L19)
+	- --
+   	- Interceptor를 이용해서 cache-control 시간 설정 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/interceptor/CacheInterceptor.java#L15)
 	- 캐시 유효시간 내에는 메모리 캐시 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/resources/upload/cache2.png)
 	- 캐시 유효시간이 초과되면 요청 시 if-modified-since를 보내서 서버측 데이터가 갱신되었는지
 	  Last-Modified와 비교 검증!  갱신 되지 않았다면 304 상태코드! [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/resources/upload/cache3.png)
-	- --
-   	- ThreadPool 사용 (공부/작성중)[📝🔗]
       
-2. (공부/작성중)멀티쓰레드 동시성 문제
+2. 멀티쓰레드 동시성 문제
     - ThreadLocal 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/ThreadLocalController.java#L21)
     - Atomic 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/AtomicInstanceController.java#L35)
     - synchronized 키워드 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L12)
