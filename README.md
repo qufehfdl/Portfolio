@@ -7,6 +7,7 @@
 		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자 [작성중]
 		<li>멀티쓰레드 공부하고 적용해보자 : 이벤트 버튼으로 예제를 생성해보자 [작성중]
 	</ul>
+	
 <hr>
 <h2>🌈주요 로직</h2>
 
@@ -15,11 +16,12 @@
 	- 캐시 유효시간 내에는 메모리 캐시 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/resources/upload/cache2.png)
 	- 캐시 유효시간이 초과되면 요청 시 if-modified-since를 보내서 서버측 데이터가 갱신되었는지
 	  Last-Modified와 비교 검증!  갱신 되지 않았다면 304 상태코드! [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/resources/upload/cache3.png)
+	- --
+   	- ThreadPool 사용 (공부/작성중)[📝🔗]
       
 2. (공부/작성중)멀티쓰레드 동시성 문제
     - ThreadLocal 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/ThreadLocalController.java#L21)
     - Atomic 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/AtomicInstanceController.java#L35)
-    - ThreadPool 사용 (공부/작성중)
     - synchronized 키워드 사용 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L12)
 
 3. 동기 / 비동기 사용한 댓글 처리
