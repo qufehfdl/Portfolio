@@ -16,16 +16,18 @@ public class AsyncConfig {
 	public ThreadPoolTaskExecutor myExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 
+		// 기본 쓰레드 개수 : 작업이 없다면 기본적으로 가지는 개수
+		executor.setCorePoolSize(100);
+		
 		// 최대로 가질 수 있는 쓰레드 개수 : 항상 이 개수를 유지하는것은 아님
 		executor.setMaxPoolSize(200);
 
-		// 기본 쓰레드 개수 : 작업이 없다면 기본적으로 가지는 개수
-		executor.setCorePoolSize(100);
-
-		// 작업 Queue 사이즈
+		// 작업 Queue 사이즈 : 대기중인 작업수 제한
 		executor.setQueueCapacity(9999);
 
+		// 생성되는 쓰레드의 접두어
 		executor.setThreadNamePrefix("taehwa-");
+		
 		executor.initialize();
 		return executor;
 	}
