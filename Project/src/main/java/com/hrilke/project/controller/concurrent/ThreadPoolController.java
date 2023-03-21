@@ -1,6 +1,5 @@
 package com.hrilke.project.controller.concurrent;
 
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,11 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequiredArgsConstructor
 public class ThreadPoolController {
-
 	private final ThreadPoolTaskExecutor executor;
 
-	//스레드에서 병렬로 실행
-	//작업이 끝날 때마다 해당 스레드는 풀로 반환
+	// 스레드에서 병렬로 실행
+	// 작업이 끝날 때마다 해당 스레드는 풀로 반환
 	@GetMapping("/ThreadPool")
 	public String threadPool() {
 		Long start = System.currentTimeMillis();
@@ -30,9 +28,8 @@ public class ThreadPoolController {
 		return "ok";
 	}
 
-	@Async
 	@GetMapping("/NoThreadPool")
-	public String noThreadPool() {
+	public String noThreadPool() throws InterruptedException {
 		Long start = System.currentTimeMillis();
 		for (int i = 0; i < 10000; i++) {
 			proccess();
@@ -48,4 +45,5 @@ public class ThreadPoolController {
 			count = count + i;
 		}
 	}
+
 }

@@ -2,12 +2,10 @@ package com.hrilke.project.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @Configuration
-@EnableAsync
-public class AsyncConfig {
+public class ThreadPoolConfig {
 
 	// Tomcat8 부터는 non-blocking [다수의 커넥션에 1개의 쓰레드]
 	// blocking [1커넥션에 1개의 쓰레드]
@@ -18,7 +16,7 @@ public class AsyncConfig {
 
 		// 기본 쓰레드 개수 : 작업이 없다면 기본적으로 가지는 개수
 		executor.setCorePoolSize(100);
-		
+
 		// 최대로 가질 수 있는 쓰레드 개수 : 항상 이 개수를 유지하는것은 아님
 		executor.setMaxPoolSize(200);
 
@@ -27,7 +25,7 @@ public class AsyncConfig {
 
 		// 생성되는 쓰레드의 접두어
 		executor.setThreadNamePrefix("taehwa-");
-		
+
 		executor.initialize();
 		return executor;
 	}

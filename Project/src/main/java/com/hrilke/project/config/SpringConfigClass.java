@@ -6,7 +6,7 @@ import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
- 
+
 public class SpringConfigClass extends AbstractAnnotationConfigDispatcherServletInitializer {
 	// DispatcherServlet에 매핑할 요청 주소를 셋팅
 	@Override
@@ -23,9 +23,9 @@ public class SpringConfigClass extends AbstractAnnotationConfigDispatcherServlet
 	// 프로젝트에서 사용할 Bean들을 정의기 위한 클래스를 지정
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { RootAppContext.class , AsyncConfig.class };
+		return new Class[] { RootAppContext.class, ThreadPoolConfig.class };
 	}
-	
+
 	// 파라미터 인코딩 필터 설정
 	@Override
 	protected Filter[] getServletFilters() {
