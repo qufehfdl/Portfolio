@@ -14,7 +14,7 @@ import com.hrilke.project.beans.ContentBean;
 
 public interface BoardMapper {
 
-//	글을 저장하기 전에			이 쿼리문을 먼저 실행하고 담긴 값을                     		여기다 넣는다         		먼저실행        	타입은 인티저
+//	글을 저장하기 전에	이 쿼리문을 먼저 실행하고 담긴 값을                     여기다 넣는다         먼저실행        	타입은 인티저
 	@SelectKey(statement = "select max(content_num)+1 from content_table", keyProperty = "content_num", before = true, resultType = int.class)
 
 	// 게시글 작성
