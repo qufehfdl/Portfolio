@@ -47,7 +47,7 @@
 <h2>🌈기억나는 문제 해결 or 에러</h2>
 
 1. @RequiredArgsConstructor @Value 동시 사용시 순환참조 에러
-    - @RequiredArgsConstructor가 선언되어있고 @Value가 붙은 모든 필드에 final로 선언되므로 <br> final을 제거하고 Setter주입 방법을 사용[📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ServletAppContext.java#L69)
+    - @RequiredArgsConstructor가 선언되어있고 @Value가 붙은 모든 필드에 final로 선언되므로 <br> final을 제거하고 Setter주입 방법을 사용[📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ServletAppContext.java#L71)
 
 2. 파일 업로드시 DB의 에러 (Mybatis 부적합한 열유형 1111)
     - DB컬럼에 파일이름을 저장, 사용자가 파일을 올리지 않을 수도 있으므로 null을 허용했지만 <br> Mybatis에서 막음
