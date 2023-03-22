@@ -11,16 +11,21 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequiredArgsConstructor
 public class ThreadPoolController {
-	private final ThreadPoolTaskExecutor executor;
+	private final ThreadPoolTaskExecutor myExecutor;
 
-	// 스레드에서 병렬로 실행
+	// ThreadPool기반의 비동기 처리
 	// 작업이 끝날 때마다 해당 스레드는 풀로 반환
 	@GetMapping("/ThreadPool")
 	public String threadPool() {
 		Long start = System.currentTimeMillis();
 		for (int i = 0; i < 10000; i++) {
-			executor.execute(() -> {
-				proccess();
+
+			// 스레드 풀의 worker 스레드에게 할당
+			myExecutor.execute(new Runnable() {
+				@Override
+				public void run() {
+					proccess(); // 스레드 풀에서 할당된 worker 스레드에 의해 병렬적으로 실행됨!
+				}
 			});
 		}
 		Long end = System.currentTimeMillis();
