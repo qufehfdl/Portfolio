@@ -50,7 +50,7 @@
     - @RequiredArgsConstructor가 선언되어있고 @Value가 붙은 모든 필드에 final로 선언되므로 <br> final을 제거하고 Setter주입 방법을 사용[📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ServletAppContext.java#L69)
 
 2. 파일 업로드시 DB의 에러 (Mybatis 부적합한 열유형 1111)
-    - DB컬럼에 파일이름을 저장할 수 있게 하고 사용자가 파일을 올리지 않을 수도 있으므로 null을 허용했지만 <br> Mybatis에서 막음
+    - DB컬럼에 파일이름을 저장, 사용자가 파일을 올리지 않을 수도 있으므로 null을 허용했지만 <br> Mybatis에서 막음
        null을 허용하는 컬럼을 사용 할때는 반드시 타입을 명시하자 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/service/BoardService.java#L60)
 
 3. ajax로 여러 데이터를 받는 방법
