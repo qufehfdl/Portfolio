@@ -27,7 +27,6 @@ public class ThreadLocalController {
 	@GetMapping("/myThreadLocal/{content}")
 	public String test(@PathVariable String content) {
 		ConcurrentTestBean concurrentTestBean = threadLocal.get();
-
 		// 불필요한 객체 생성을 방지하자!
 		if (concurrentTestBean == null) {
 			concurrentTestBean = new ConcurrentTestBean();

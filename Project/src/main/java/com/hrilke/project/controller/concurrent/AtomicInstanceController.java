@@ -34,12 +34,12 @@ public class AtomicInstanceController {
 
 			// 여러 스레드 요청이 오더라도 ConcurrentTestBean 가 공유되지는 않지만
 			// 33번 라인의 객체 생성 부분이 동시성 문제가 발생하는 부분!
-//			atomicReference.set(concurrentTestBean);
+			atomicReference.set(concurrentTestBean);
 
 			// 첫번째 변수 : 기대하는 값
 			// 두번째 변수 : 새로운 값
 			// 현재 값이 첫번째 변수와 같으면 두번째 변수의 값으로 변경되고 true 반환!
-			atomicReference.compareAndSet(concurrentTestBean, concurrentTestBean);
+//			atomicReference.compareAndSet(concurrentTestBean, concurrentTestBean);
 		}
 
 		log.info("입력 될 값 :------------------- {}", str);

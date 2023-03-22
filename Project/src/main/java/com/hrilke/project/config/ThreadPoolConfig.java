@@ -2,15 +2,23 @@ package com.hrilke.project.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
+import com.hrilke.project.service.concurrent.AsyncService;
 
 @Configuration
 public class ThreadPoolConfig {
+	
+	@Bean
+	public AsyncService asyncService() {
+		return new AsyncService();
+	}
 
 	// Tomcat8 부터는 non-blocking [다수의 커넥션에 1개의 쓰레드]
 	// blocking [1커넥션에 1개의 쓰레드]
 	// ThreadPool : Thread를 허용된 개수 안에서 사용하도록 제한
-	@Bean
+	@Bean(name = "myExecutor")
 	public ThreadPoolTaskExecutor myExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 

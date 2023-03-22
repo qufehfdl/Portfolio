@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
@@ -45,6 +46,7 @@ import lombok.RequiredArgsConstructor;
 @ComponentScan("com.hrilke.project.dao")
 @PropertySource("/WEB-INF/properties/db.properties")
 @RequiredArgsConstructor
+@EnableAsync
 public class ServletAppContext implements WebMvcConfigurer {
 
 	@Value("${db.classname}")

@@ -37,4 +37,9 @@ public class RootAppContext {
 	public AtomicReference<ConcurrentTestBean> atomicReference() {
 		return new AtomicReference<ConcurrentTestBean>();
 	}
+	
+	@Bean
+	public ConcurrentTestBean concurrentTestBean() {
+		return new ConcurrentTestBean();
+	}
 }
