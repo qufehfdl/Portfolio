@@ -21,7 +21,7 @@ public class ThreadPoolConfig {
 	public ThreadPoolTaskExecutor myExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 
-		// 기본 쓰레드 개수 : 작업이 없다면 기본적으로 가지는 개수
+		// 기본 쓰레드 개수 : 작업이 없다면 기본적으로 가지는 개수 
 		executor.setCorePoolSize(100);
 
 		// 최대로 가질 수 있는 쓰레드 개수 : 항상 이 개수를 유지하는것은 아님
