@@ -70,59 +70,13 @@
 			}
 		})
 	}
-	function myEvent() {
-		$.ajax({
-			url : '${root}synchronized',
-			type : 'get',
-			dataType : 'text',
-			success : function(result) {
-				alert('회원님의 이벤트 번호는 : ' + result);
-			}
-		})
-	}
-
-	function myThreadLocal(content) {
-		var content = $("#content").val();
-		$.ajax({
-			url : '${root}myThreadLocal/' + content,
-			type : 'get',
-			dataType : 'text',
-			success : function(result) {
-				alert(result)
-			}
-		})
-	}
-
-	function myAtomic(str) {
-		var str = $("#str").val();
-		$.ajax({
-			url : '${root}myAtomic/' + str,
-			type : 'get',
-			dataType : 'text',
-			success : function(result) {
-				alert(result)
-			}
-		})
-	}
-	
-	function myConcurrent() {
-		var str = $("#concurrent").val();
-		$.ajax({
-			url : '${root}myConcurrent/' + str,
-			type : 'get',
-			dataType : 'text',
-			success : function(result) {
-				alert(result)
-			}
-		})
-	}
 </script>
 <body>
 	<c:import url="/WEB-INF/views/include/top.jsp"></c:import>
 	🐣 세션시간 1분 [현재 꺼둠]
 	<br>
 	<br> 🧐 추가/공부할 기능
-	<ul> 
+	<ul>
 		<li>대규모 트래픽 처리에 대해서 공부하고 적용해보자
 		<li>멀티쓰레드 공부하고 적용해보자
 	</ul>

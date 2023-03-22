@@ -13,14 +13,14 @@ import org.apache.ibatis.session.RowBounds;
 import com.hrilke.project.beans.ContentBean;
 
 public interface BoardMapper {
- 
+
 //	글을 저장하기 전에			이 쿼리문을 먼저 실행하고 담긴 값을                     		여기다 넣는다         		먼저실행        	타입은 인티저
 	@SelectKey(statement = "select max(content_num)+1 from content_table", keyProperty = "content_num", before = true, resultType = int.class)
 
 	// 게시글 작성
-	@Insert("insert into content_table(content_subject,content_text, "
+	@Insert("insert into content_table(content_num,content_subject,content_text, "
 			+ "content_file ,content_writer_num , content_board_num ,content_date) "
-			+ "values (#{content_subject},#{content_text},#{content_file,jdbcType=VARCHAR}, "
+			+ "values (#{content_num},#{content_subject},#{content_text},#{content_file,jdbcType=VARCHAR}, "
 			+ "#{content_writer_num}, #{content_board_num},now())")
 	void addContentInfo(ContentBean writeContentBean);
 
@@ -47,7 +47,7 @@ public interface BoardMapper {
 			+ "content_file = #{content_file , jdbcType=VARCHAR} " + "where content_num = #{content_num}")
 	void modifyContentInfo(ContentBean modifyContentBean);
 
-	//게시글 삭제
+	// 게시글 삭제
 	@Delete("delete from content_table where content_num = #{content_num}")
 	void deleteContentInfo(int content_num);
 
@@ -62,7 +62,7 @@ public interface BoardMapper {
 	// 검색된 게시글 리스트
 	@Select("select * from content_table where content_subject Like CONCAT('%',#{content_subject},'%')")
 	Vector<ContentBean> getSearchList(String content_subject, RowBounds rowBounds);
-	
+
 //  -------------------------------- 오라클 --------------------------------
 
 //	@SelectKey(statement = "select content_seq.nextval from dual", keyProperty = "content_num", before = true, resultType = int.class)
@@ -100,6 +100,5 @@ public interface BoardMapper {
 //	int getContentCnt(int content_board_num);
 
 //	-----------------------------------------------------------------------------------
-	
-	
+
 }
