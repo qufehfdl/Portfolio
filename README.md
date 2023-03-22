@@ -5,7 +5,7 @@
 <h2>🌈주요 로직</h2>
 
 1. 트래픽 처리
-	- ThreadPool 사용하기 위해 ThreadPoolTaskExecutor 설정[📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ThreadPoolConfig.java#L12)
+	- ThreadPool 사용하기 위해 ThreadPoolTaskExecutor 설정[📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ThreadPoolConfig.java#L19)
 	- 실행 속도 확인[📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/ThreadPoolController.java#L17)
 	- 비동기 처리[📝🔗]
 	- --
