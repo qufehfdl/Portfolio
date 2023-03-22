@@ -17,7 +17,7 @@ public class ThreadPoolConfig {
 	// Tomcat8 부터는 non-blocking [다수의 커넥션에 1개의 쓰레드]
 	// blocking [1커넥션에 1개의 쓰레드]
 	// ThreadPool : Thread를 허용된 개수 안에서 사용하도록 제한
-	@Bean(name = "myExecutor")
+	@Bean(name = "myExecutor") 
 	public ThreadPoolTaskExecutor myExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 
