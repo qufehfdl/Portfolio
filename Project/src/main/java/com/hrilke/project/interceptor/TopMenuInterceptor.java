@@ -25,7 +25,7 @@ public class TopMenuInterceptor implements HandlerInterceptor {
 	private final UserBean loginUserBean;
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
+			throws Exception { 
 		List<BoardInfoBean> topMenuList = topService.getTopMenuList();
 		request.setAttribute("topMenuList", topMenuList);
 		request.setAttribute("loginUserBean", loginUserBean);
