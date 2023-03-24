@@ -67,6 +67,7 @@ public class ServletAppContext implements WebMvcConfigurer {
 
 //	@RequiredArgsConstructor를 적용하기위해 final로 설정하면 순환참조 에러 발생!
 //	생성자 주입 방식에서 스프링이 객체를 생성할 때 주입받아야 하는데 빈이 아직 생성되지 않았을 가능성이 있다
+//	두개의 필드는 Spring에서 Bean으로 등록하지 않음 세터로 주입받아야 함
 	private TopService topService;
 	private BoardService boardService;
 
