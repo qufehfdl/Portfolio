@@ -65,12 +65,12 @@ public class ServletAppContext implements WebMvcConfigurer {
 	@Qualifier("loginUserBean")
 	private final UserBean loginUserBean;
 
-//	@RequiredArgsConstructor를 사용하기위해 final로 설정하면 순환참조 에러 발생!
-//	생성자 주입 방식에서 스프링이 객체를 생성하는 도중에 주입받아야 하는데 빈이 아직 생성되지 않았을 가능성이 있다
+//	@RequiredArgsConstructor를 적용하기위해 final로 설정하면 순환참조 에러 발생!
+//	생성자 주입 방식에서 스프링이 객체를 생성할 때 주입받아야 하는데 빈이 아직 생성되지 않았을 가능성이 있다
 	private TopService topService;
 	private BoardService boardService;
 
-//	세터 주입 방식을 사용해서 순환참조 문제를 방지!
+//	세터 주입 방식을 사용해서 컨테이너가 객체를 생성한 다음 주입받도록 하자!
 	@Autowired
 	public void setTopService(TopService topService) {
 		this.topService = topService;
