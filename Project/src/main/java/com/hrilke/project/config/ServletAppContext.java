@@ -61,24 +61,20 @@ public class ServletAppContext implements WebMvcConfigurer {
 	@Value("${db.password}")
 	private String db_password;
 
-	private TopService topService;
-
+//  불변성 보장!
 	@Qualifier("loginUserBean")
-	private UserBean loginUserBean;
+	private final UserBean loginUserBean;
 
+//	@RequiredArgsConstructor를 사용하기위해 final로 설정하면 순환참조 에러 발생!
+//	생성자 주입 방식에서 스프링이 객체를 생성하는 도중에 주입받아야 하는데 빈이 아직 생성되지 않았을 가능성이 있다
+	private TopService topService;
 	private BoardService boardService;
 
-	// 순환참조에러로 인해 세터주입
+//	세터 주입 방식을 사용해서 순환참조 문제를 방지!
 	@Autowired
 	public void setTopService(TopService topService) {
 		this.topService = topService;
 	}
-
-	@Autowired
-	public void setLoginUserBean(UserBean loginUserBean) {
-		this.loginUserBean = loginUserBean;
-	}
-
 	@Autowired
 	public void setBoardService(BoardService boardService) {
 		this.boardService = boardService;

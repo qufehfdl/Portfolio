@@ -22,7 +22,6 @@ public class RootAppContext {
 	@Qualifier("loginUserBean")
 	@SessionScope
 	public UserBean loginUserBean(HttpSession session) {
-
 //		session.setMaxInactiveInterval(60);
 		return new UserBean();
 	}
@@ -37,9 +36,10 @@ public class RootAppContext {
 	public AtomicReference<ConcurrentTestBean> atomicReference() {
 		return new AtomicReference<ConcurrentTestBean>();
 	}
-	
+
 	@Bean
 	public ConcurrentTestBean concurrentTestBean() {
 		return new ConcurrentTestBean();
 	}
+
 }

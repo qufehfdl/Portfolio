@@ -86,9 +86,7 @@ public class BoardController {
 		if (result.hasErrors()) {
 			return "board/write";
 		}
-		System.out.println(writeBean.getContent_num());
 		boardService.addContentInfo(writeBean);
-		System.out.println(writeBean.getContent_num());
 		return "board/write_success";
 	}
 
