@@ -19,6 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ThreadLocalController {
 
 // 	threadLocal은 스레드에 고유한 값이며 한 스레드에서 값을 설정하면 다른 스레드에서는 같은 값을 가져올 수 없다!!
+//	공유 객체를 스레드별로 분리해서 사용하자!
 	private final ThreadLocal<ConcurrentTestBean> threadLocal;
 
 //  여러 스레드 요청이 오게 되면 ConcurrentTestBean 가 공유되어 동시성 문제 발생
