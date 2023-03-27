@@ -41,15 +41,9 @@ public class BoardController {
 	public String main(@RequestParam("board_category") int board_category,
 			@RequestParam(value = "page", defaultValue = "1") int page, Model model) {
 		model.addAttribute("board_category", board_category);
-
-		String boardInfoName = boardService.getBoardInfoName(board_category);
-		model.addAttribute("boardInfoName", boardInfoName);
-
-		List<ContentBean> contentList = boardService.getContentList(board_category, page);
-		model.addAttribute("contentList", contentList);
-
-		PageBean pageBean = boardService.getContentCnt(board_category, page);
-		model.addAttribute("pageBean", pageBean);
+		model.addAttribute("boardInfoName", boardService.getBoardInfoName(board_category));
+		model.addAttribute("contentList", boardService.getContentList(board_category, page));
+		model.addAttribute("pageBean", boardService.getContentCnt(board_category, page));
 
 		// 글 읽고 목록으로가면 페이지번호가 1로가는데 글을 클릭했었던 페이지번호로 가도록 설정
 		model.addAttribute("page", page);
@@ -61,11 +55,9 @@ public class BoardController {
 	@RequestMapping(value = "/searchList", method = { RequestMethod.GET, RequestMethod.POST })
 	public String searchList(@RequestParam(value = "content_subject", required = false) String content_subject,
 			@RequestParam(value = "page", defaultValue = "1") int page, Model model) {
-		Vector<ContentBean> vector = boardService.getSearchList(content_subject, page);
-		PageBean pageBean = boardService.getSearchCnt(content_subject, page);
-		model.addAttribute("pageBean", pageBean);
+		model.addAttribute("pageBean", boardService.getSearchCnt(content_subject, page));
 		model.addAttribute("page", page);
-		model.addAttribute("vector", vector);
+		model.addAttribute("vector", boardService.getSearchList(content_subject, page));
 		model.addAttribute("content_subject", content_subject);
 		return "board/search_list";
 	}
@@ -94,22 +86,17 @@ public class BoardController {
 	@GetMapping("/read")
 	public String read(@RequestParam("board_category") int board_category, @RequestParam("content_num") int content_num,
 			@RequestParam(value = "page", defaultValue = "1") int page,
-			@ModelAttribute("replyBean") ReplyBean replyBean, Model model ,HttpServletResponse response) {
+			@ModelAttribute("replyBean") ReplyBean replyBean, Model model, HttpServletResponse response) {
 
 		model.addAttribute("board_category", board_category);
 		// 수정 삭제때 필요
 		model.addAttribute("content_num", content_num);
 
-		ContentBean readContentBean = boardService.getContentInfo(content_num);
-		model.addAttribute("readContentBean", readContentBean);
-
+		model.addAttribute("readContentBean", boardService.getContentInfo(content_num));
 		model.addAttribute("loginUserBean", loginUserBean);
-
 		model.addAttribute("page", page);
+		model.addAttribute("replyList", replyService.replyList(content_num));
 
-		List<ReplyBean> replyList = replyService.replyList(content_num);
-		model.addAttribute("replyList", replyList);
-		
 		return "board/read";
 	}
 
