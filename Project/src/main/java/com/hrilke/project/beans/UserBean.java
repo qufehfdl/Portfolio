@@ -11,23 +11,22 @@ import lombok.Setter;
 public class UserBean {
 
 	private int user_num;
-	
+
 	@Size(min = 2, max = 4)
 	@Pattern(regexp = "[가-힣]*")
 	private String user_name;
-	
+
 	@Size(min = 4, max = 20)
 	@Pattern(regexp = "[a-zA-Z0-9]*")
 	private String user_id;
-	
+
 	@Size(min = 4, max = 20)
 	@Pattern(regexp = "[a-zA-Z0-9]*")
 	private String user_pw;
-	
+
 	@Size(min = 4, max = 20)
 	@Pattern(regexp = "[a-zA-Z0-9]*")
 	private String user_pw2;
-	
 
 	// 쿠키
 	private boolean cook;
@@ -41,6 +40,5 @@ public class UserBean {
 		this.userLogin = false;
 		this.cook = false;
 	}
-	
-	
+
 }

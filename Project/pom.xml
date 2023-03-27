@@ -48,27 +48,22 @@
 			<version>6.0.6</version>
 		</dependency>
 
+
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.8.1</version>
+			<version>5.8.2</version>
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>3.21.0</version>
-			<scope>test</scope>
-		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.13.2</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
 		<!-- 잭슨 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -146,16 +141,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
-		<!-- Test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>test</scope>
-		</dependency>
-
-
 
 		<!-- lombok -->
 		<dependency>

@@ -48,17 +48,42 @@ public class ThreadLocalController {
 
 	@GetMapping("/local")
 	public String myThreadLocal() {
-		Thread t4 = new Thread(() -> myRequest4("/Project/myThreadLocal/~~~~~~"));
-		Thread t1 = new Thread(() -> myRequest1("/Project/myThreadLocal/qqqqqq"));
-		Thread t2 = new Thread(() -> myRequest2("/Project/myThreadLocal/123456"));
-		Thread t3 = new Thread(() -> myRequest3("/Project/myThreadLocal/xxxxxx"));
-		Thread t5 = new Thread(() -> myRequest5("/Project/myThreadLocal/oooooo"));
-		t1.start();
-		t2.start();
-		t3.start();
-		t4.start();
-		t5.start();
-		return "ok";
+	    Thread t4 = new Thread(new Runnable() {
+	        @Override
+	        public void run() {
+	            myRequest4("/Project/myThreadLocal/~~~~~~");
+	        }
+	    });
+	    Thread t1 = new Thread(new Runnable() {
+	        @Override
+	        public void run() {
+	            myRequest1("/Project/myThreadLocal/qqqqqq");
+	        }
+	    });
+	    Thread t2 = new Thread(new Runnable() {
+	        @Override
+	        public void run() {
+	            myRequest2("/Project/myThreadLocal/123456");
+	        }
+	    });
+	    Thread t3 = new Thread(new Runnable() {
+	        @Override
+	        public void run() {
+	            myRequest3("/Project/myThreadLocal/xxxxxx");
+	        }
+	    });
+	    Thread t5 = new Thread(new Runnable() {
+	        @Override
+	        public void run() {
+	            myRequest5("/Project/myThreadLocal/oooooo");
+	        }
+	    });
+	    t1.start();
+	    t2.start();
+	    t3.start();
+	    t4.start();
+	    t5.start();
+	    return "ok";
 	}
 
 	private void myRequest1(String myURL) {

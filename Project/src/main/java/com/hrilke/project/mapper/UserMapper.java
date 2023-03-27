@@ -27,7 +27,6 @@ public interface UserMapper {
 	// 회원 정보 수정
 	@Update("update user_table set user_pw = #{user_pw} where user_num = #{user_num}")
 	void modifyUserInfo(UserBean modifyUserBean);
-	
 
 //	-------------------------오라클-----------------------
 
