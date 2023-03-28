@@ -1,8 +1,5 @@
 package com.hrilke.project.controller;
 
-import java.util.List;
-import java.util.Vector;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -18,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hrilke.project.beans.ContentBean;
-import com.hrilke.project.beans.PageBean;
 import com.hrilke.project.beans.ReplyBean;
 import com.hrilke.project.beans.UserBean;
 import com.hrilke.project.service.BoardService;
