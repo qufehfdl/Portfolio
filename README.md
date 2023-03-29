@@ -62,6 +62,6 @@
     - 반환된 데이터를 이용해서 방금 작성한글을 바로 볼 수 있는 기능을 구현!
     
 6. DeadLock 발생
-    - synchronized 에서 사용할 key가 공유객체이므로 데드락 상황 발생 [📝🔗]()
-    - 해결 방법 [📝🔗]()
+    - 데드락 상황 발생 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L25)
+    - 해결 방법 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L66)
     
