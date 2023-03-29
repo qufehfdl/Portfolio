@@ -79,7 +79,7 @@ public class SynchronizedController {
 //		}
 //	});
 //
-//	Thread thread2 = new Thread(new Runnable() {
+//	Thread thread2 = new Thread(new Runnable() { 
 //		public void run() {
 //			synchronized (key1) {
 //				MySleep.mySleep();
