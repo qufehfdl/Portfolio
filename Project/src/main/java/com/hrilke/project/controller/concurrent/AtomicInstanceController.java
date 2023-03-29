@@ -39,15 +39,14 @@ public class AtomicInstanceController {
 			// 첫번째 변수 : 기대하는 값
 			// 두번째 변수 : 새로운 값
 			// 현재 값이 첫번째 변수와 같으면 두번째 변수의 값으로 변경되고 true 반환!
-			boolean result = atomicReference.compareAndSet(concurrentTestBean, concurrentTestBean);
-			log.info("결과 : {}", result);
+			atomicReference.compareAndSet(concurrentTestBean, concurrentTestBean);
 		}
 
 		log.info("입력 될 값 :------------------- {}", str);
 		concurrentTestBean.setStr(str);
 
 		// 1초간 스레드 정지
-		mySleep();
+		MySleep.mySleep();
 
 		log.info("입력 된 값 : {}", concurrentTestBean.getStr());
 		return concurrentTestBean.getStr();
@@ -168,12 +167,5 @@ public class AtomicInstanceController {
 		}
 	}
 
-	private void mySleep() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
 
 }

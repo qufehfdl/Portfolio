@@ -41,7 +41,7 @@ public class ThreadLocalController {
 		threadLocal.remove();
 
 		// 1초간 스레드 정지
-		mySleep();
+		MySleep.mySleep();
 
 		log.info("입력 된 값 : {}", concurrentTestBean.getStr());
 		return concurrentTestBean.getStr();
@@ -162,11 +162,4 @@ public class ThreadLocalController {
 		}
 	}
 
-	private void mySleep() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
 }
