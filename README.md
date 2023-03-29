@@ -45,7 +45,7 @@
 
 1. @RequiredArgsConstructor 사용시 순환참조 에러
     - 생성자 주입 방식에서 스프링이 객체를 생성할 때 주입받아야 하는데 빈이 아직 생성되지 않았으므로<br>
-    setter 주입 방식으로 변경 BeanLifeCycle !! [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ServletAppContext.java#L74)
+    setter 주입 방식으로 변경 😊BeanLifeCycle !! [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ServletAppContext.java#L74)
 
 2. 파일 업로드시 DB의 에러 (Mybatis 부적합한 열유형 1111)
     - DB컬럼에 파일이름을 저장, 사용자가 파일을 올리지 않을 수도 있으므로 null을 허용했지만 <br> Mybatis에서 막음
