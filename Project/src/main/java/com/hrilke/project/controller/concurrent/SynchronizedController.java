@@ -69,22 +69,28 @@ public class SynchronizedController {
 
 //	Thread thread1 = new Thread(new Runnable() {
 //		public void run() {
-//			synchronized (key1) {
+	
+//			synchronized (key1) {          ← 이 부분이 일관되게!!
 //
 //				MySleep.mySleep();
 //
 //				synchronized (key2) {
 //				}
+	
 //			}
 //		}
 //	});
 //
 //	Thread thread2 = new Thread(new Runnable() { 
 //		public void run() {
-//			synchronized (key1) {
+	
+//			synchronized (key1) {         ← 이 부분이 일관되게!!
+	
 //				MySleep.mySleep();
+	
 //				synchronized (key2) {
 //				}
+	
 //			}
 //		}
 //	});
