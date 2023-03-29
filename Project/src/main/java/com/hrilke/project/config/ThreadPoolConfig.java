@@ -8,20 +8,15 @@ import com.hrilke.project.service.concurrent.AsyncService;
 
 @Configuration
 public class ThreadPoolConfig {
-	
-	@Bean
-	public AsyncService asyncService() {
-		return new AsyncService();
-	}
 
-	// Tomcat8 부터는 non-blocking [다수의 커넥션에 1개의 쓰레드]
-	// blocking [1커넥션에 1개의 쓰레드]
 	// ThreadPool : Thread를 허용된 개수 안에서 사용하도록 제한
-	@Bean(name = "myExecutor") 
+	// ThreadPoolTaskExecutor은 기본적으로 블로킹 방식으로 동작함!
+	// 적절한 설정으로 작업 처리 성능을 최적화할 수 있다!
+	@Bean(name = "myExecutor")
 	public ThreadPoolTaskExecutor myExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-
-		// 기본 쓰레드 개수 : 작업이 없다면 기본적으로 가지는 개수 
+		
+		// 기본 쓰레드 개수 : 작업이 없다면 기본적으로 가지는 개수
 		executor.setCorePoolSize(100);
 
 		// 최대로 가질 수 있는 쓰레드 개수 : 항상 이 개수를 유지하는것은 아님
@@ -36,4 +31,10 @@ public class ThreadPoolConfig {
 		executor.initialize();
 		return executor;
 	}
+
+	@Bean
+	public AsyncService asyncService() {
+		return new AsyncService();
+	}
+
 }
