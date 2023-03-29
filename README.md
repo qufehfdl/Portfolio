@@ -66,6 +66,7 @@
     - 받아온 데이터를 insert가 실행 되기 전에 먼저 실행 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/mapper/BoardMapper.java#L18)
     - 반환된 데이터를 이용해서 방금 작성한글을 바로 볼 수 있는 기능을 구현!
 <hr>
+
 6. DeadLock 발생
     - 데드락 상황 발생 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L25)
     - 해결 방법 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L66)
