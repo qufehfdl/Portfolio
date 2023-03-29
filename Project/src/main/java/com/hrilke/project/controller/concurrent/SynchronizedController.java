@@ -1,7 +1,5 @@
 package com.hrilke.project.controller.concurrent;
 
-import java.util.concurrent.locks.ReentrantLock;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -64,7 +62,7 @@ public class SynchronizedController {
 		thread2.start();
 		return "ok";
 	}
-
+}
 	// 해결방법 - 데드락 상황이 발생하지 않게 key얻는 순서를 일관되게 유지
 
 //	Thread thread1 = new Thread(new Runnable() {
@@ -94,4 +92,4 @@ public class SynchronizedController {
 //			}
 //		}
 //	});
-}
+
