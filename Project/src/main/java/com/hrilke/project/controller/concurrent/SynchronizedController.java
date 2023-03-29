@@ -1,5 +1,7 @@
 package com.hrilke.project.controller.concurrent;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,29 +25,67 @@ public class SynchronizedController {
 //	------------------ 데드락 공부 ------------------
 
 	// 락을 걸 키 설정
-	// 두번째 요청이 와도 이 객체를 공유
-	private Object key = new Object();
+	Object key1 = new Object();
+	Object key2 = new Object();
 
-	public void method() {
-		// synchronized 블럭은 해당 키를 획득한 스레드만이 실행하고
-		// 다른 스레드는 키를 얻을 때 까지 기다림
-		synchronized (key) {
-		}
-	}
-
-	Thread thread = new Thread(new Runnable() {
-		@Override
+	Thread thread1 = new Thread(new Runnable() {
 		public void run() {
-			method();
+			synchronized (key1) {
+				// thread1가 key1 획득
+
+				MySleep.mySleep(); // 1초 대기
+
+				// thread1가 key2 기다림
+				synchronized (key2) {
+					// 실행되지 않음
+				}
+			}
+		}
+	});
+
+	Thread thread2 = new Thread(new Runnable() {
+		public void run() {
+			synchronized (key2) {
+				// thread2가 key2 획득
+
+				MySleep.mySleep(); // 1초 대기
+
+				// thread2가 key1 기다림
+				synchronized (key1) {
+					// 실행되지 않음
+				}
+			}
 		}
 	});
 
 	@GetMapping("DeadLock")
 	public String DeadLock() {
-
-		// 두번째 요청부터는 첫번째 요청한 스레드가 아직 키를 가지고있기 때문에 데드락 발생!
-		thread.start();
-
+		thread1.start();
+		thread2.start();
 		return "ok";
 	}
+
+	// 해결방법 - 데드락 상황이 발생하지 않게 key얻는 순서를 일관되게 유지
+
+//	Thread thread1 = new Thread(new Runnable() {
+//		public void run() {
+//			synchronized (key1) {
+//
+//				MySleep.mySleep();
+//
+//				synchronized (key2) {
+//				}
+//			}
+//		}
+//	});
+//
+//	Thread thread2 = new Thread(new Runnable() {
+//		public void run() {
+//			synchronized (key1) {
+//				MySleep.mySleep();
+//				synchronized (key2) {
+//				}
+//			}
+//		}
+//	});
 }
