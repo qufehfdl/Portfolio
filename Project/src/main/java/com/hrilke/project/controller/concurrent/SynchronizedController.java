@@ -67,7 +67,7 @@ public class SynchronizedController {
 //		- 다른 키를 사용한다
 //		- 메서드를 실행의 기준을 잡고 순차적을 실행되도록 한다
 //		- synchronized의 범위를 줄인다
-
+ 
 // 아래의 해결방법은 key얻는 순서를 일관되게 유지!
 
 //	Thread thread1 = new Thread(new Runnable() {
