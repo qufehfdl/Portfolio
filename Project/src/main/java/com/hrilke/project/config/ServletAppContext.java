@@ -22,6 +22,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.hrilke.project.OOP.MyWrite;
 import com.hrilke.project.beans.UserBean;
 import com.hrilke.project.interceptor.CacheInterceptor;
 import com.hrilke.project.interceptor.CheckLoginInterceptor;
@@ -141,6 +142,13 @@ public class ServletAppContext implements WebMvcConfigurer {
 	@Bean
 	public MapperFactoryBean<ReplyMapper> getReplyMapper(SqlSessionFactory factory) throws Exception {
 		MapperFactoryBean<ReplyMapper> factoryBean = new MapperFactoryBean<ReplyMapper>(ReplyMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
+	
+	@Bean
+	public MapperFactoryBean<MyWrite> getMyWrite(SqlSessionFactory factory) throws Exception {
+		MapperFactoryBean<MyWrite> factoryBean = new MapperFactoryBean<MyWrite>(MyWrite.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}

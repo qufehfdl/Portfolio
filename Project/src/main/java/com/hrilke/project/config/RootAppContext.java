@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.annotation.SessionScope;
 
+import com.hrilke.project.OOP.MyModify;
+import com.hrilke.project.OOP.MyModify_Impl_1;
 import com.hrilke.project.beans.UserBean;
 import com.hrilke.project.beans.concurrent.ConcurrentTestBean;
 
@@ -36,9 +38,9 @@ public class RootAppContext {
 	public AtomicReference<ConcurrentTestBean> atomicReference() {
 		return new AtomicReference<ConcurrentTestBean>();
 	}
-	
+
 // Atomic 클래스와 ThreadLocal의 차이
-	
+
 // 		Atomic 클래스는 멀테스레드 환경에서 동기화 없이 안전하게 변수를 업데이트하게 해준다 [원자성을 보장해 줌] 
 //		내부적으로 비교-교환 연산(CAS)를 사용해서 현재값과 변경하려는 값이 같은지 비교 후 같으면 새로운 값으로 변경하고
 //		다르면 아무 일도 하지 않음 이 과정이 모든 스레드에서 일관적으로 수행된다!
@@ -51,4 +53,27 @@ public class RootAppContext {
 //		
 //		Atomic 클래스는 원자성을 보장하기 위한 클래스
 //		ThreadLocal은 스레드 별로 독립적인 값을 유지하는데 사용됨
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//다형성을 활용!
+	@Bean
+	public MyModify myWrite() {
+		return new MyModify_Impl_1();
+//		return new MyModify_Impl_2();
+	}
+
 }
