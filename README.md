@@ -71,3 +71,17 @@
     - 데드락 상황 발생 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L25)
     - 해결 방법 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/concurrent/SynchronizedController.java#L66)
 <hr>
+
+<h2>🌈공부 정리</h2>
+
+1. JAVA [📝🔗](https://github.com/qufehfdl/Study/blob/main/JAVA%EA%B3%B5%EB%B6%80)
+
+2. JSP [📝🔗](https://github.com/qufehfdl/Study/blob/main/JSP%EA%B3%B5%EB%B6%80)
+
+3. Spring MVC [📝🔗](https://github.com/qufehfdl/Study/blob/main/SpringMVC)
+
+4. Spring (1) [📝🔗](https://github.com/qufehfdl/Study/blob/main/SPRING%EA%B3%B5%EB%B6%801)
+
+5. Spring (2) [📝🔗](https://github.com/qufehfdl/Study/blob/main/SPRING%EA%B3%B5%EB%B6%802)
+
+6. 그 외 공부 [📝🔗](https://github.com/qufehfdl/Study/blob/main/%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80%20%EA%B3%B5%EB%B6%80)
