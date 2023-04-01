@@ -53,7 +53,7 @@
        null을 허용하는 컬럼을 사용 할때는 반드시 타입을 명시하자 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/service/BoardService.java#L60)
 <hr>
        
-3. Atomic 클래스와 ThreadLocal의 차이 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/RootAppContext.java#L40)
+3. Atomic 클래스와 ThreadLocal의 차이 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/RootAppContext.java#L42)
 
 <hr>
 
