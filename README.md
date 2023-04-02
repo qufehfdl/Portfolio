@@ -39,7 +39,7 @@
 6. 인터셉터 처리 : 사용자가 URL을 직접 작성하고 접근하거나 로그인이 아닌 상태에서 접근할 수 없는곳에 접근 할 때
     - preHandle 생성 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/interceptor/CheckLoginInterceptor.java#L21)
     - Interceptor 등록 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/ServletAppContext.java#L161)
-    - 🔎실제 작동 [📝🔗](http://54.180.140.215:8080/Project/board/read)
+    - 🔎실제 작동 [📝🔗](http://54.180.140.215:8080/Project/user/modify)
   
 <h2>🌈기억나는 문제 해결 or 에러</h2>
 
