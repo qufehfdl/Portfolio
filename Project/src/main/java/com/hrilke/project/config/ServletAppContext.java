@@ -207,6 +207,10 @@ public class ServletAppContext implements WebMvcConfigurer {
 }
 
 //DispatcherServlet의 동작 과정
+
+// HTTP 프로토콜로 들어오는 모든 요청을 가장 [ 먼저 ] 받아 
+// 적합한 컨트롤러에 위임해주는 [ 프론트 컨트롤러 ]
+
 //		1.클라이언트의 request가 오면 DispatcherServlet이 먼저 받아서 HandlerMapping 에게 보내줌
 //		2.HandlerMapping은 가장 적합한 Controller를 찾아서 
 //		3.다시 DispatcherServlet으로 보낸 후 HandlerAdapter에게 보냄
@@ -217,6 +221,14 @@ public class ServletAppContext implements WebMvcConfigurer {
 //		7.ViewResolver가 결과에 가장 적합한 JSP를 찾아줌 
 //		8.View가 클라이언트에게 response함
 
+
 //        |         Web Context                   |
 //			      |         Spring Context        |
 //    요청 -> 필터 -> 디스파쳐서블릿 -> 인터셉터 -> 컨트롤러
+
+
+// 핸들러 어댑터가 컨트롤러로 요청을 넘기기 전에 공통적인 전처리 과정
+
+//   요청에 매칭되는 인터셉터들도 실행을 시키고 @RequestParam, @RequestBody 등으로 
+//   파라미터를 준비하는 ArgumentResolver도 실행하는 등의 다양한 공통 작업들이 수행됨!
+//   이러한 전처리 작업들이 완료되면 파라미터 값들과 함께 컨트롤러로 요청을 위임
