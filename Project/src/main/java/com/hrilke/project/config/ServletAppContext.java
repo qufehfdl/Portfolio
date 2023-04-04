@@ -229,6 +229,6 @@ public class ServletAppContext implements WebMvcConfigurer {
 
 // 핸들러 어댑터가 컨트롤러로 요청을 넘기기 전에 공통적인 전처리 과정
 
-//   요청에 매칭되는 인터셉터들도 실행을 시키고 @RequestParam, @RequestBody 등으로 
+//   요청에 매칭되는 인터셉터들도 실행을 시키고 @RequestParam  @RequestBody  @PathVariable 으로 
 //   파라미터를 준비하는 ArgumentResolver도 실행하는 등의 다양한 공통 작업들이 수행됨!
-//   이러한 전처리 작업들이 완료되면 파라미터 값들과 함께 컨트롤러로 요청을 위임
+//   전처리 작업들이 완료되면 파라미터 값들과 함께 컨트롤러로 요청을 위임
