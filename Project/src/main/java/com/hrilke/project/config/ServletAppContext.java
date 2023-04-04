@@ -220,7 +220,7 @@ public class ServletAppContext implements WebMvcConfigurer {
 //		6.수행 한 후 결과를 가지고 DispatcherServlet 와서 ViewResolver에게 감
 //		7.ViewResolver가 결과에 가장 적합한 JSP를 찾아줌 
 //		8.View가 클라이언트에게 response함
-
+ 
 
 //          |              Web Context                   |
 //		    |           Spring Context           |
