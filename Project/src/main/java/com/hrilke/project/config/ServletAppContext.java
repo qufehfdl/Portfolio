@@ -77,6 +77,7 @@ public class ServletAppContext implements WebMvcConfigurer {
 	public void setTopService(TopService topService) {
 		this.topService = topService;
 	}
+
 	@Autowired
 	public void setBoardService(BoardService boardService) {
 		this.boardService = boardService;
@@ -145,7 +146,7 @@ public class ServletAppContext implements WebMvcConfigurer {
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
-	
+
 	@Bean
 	public MapperFactoryBean<MyWrite> getMyWrite(SqlSessionFactory factory) throws Exception {
 		MapperFactoryBean<MyWrite> factoryBean = new MapperFactoryBean<MyWrite>(MyWrite.class);
@@ -205,3 +206,17 @@ public class ServletAppContext implements WebMvcConfigurer {
 
 }
 
+//DispatcherServlet의 동작 과정
+//		1.클라이언트의 request가 오면 DispatcherServlet이 먼저 받아서 HandlerMapping 에게 보내줌
+//		2.HandlerMapping은 가장 적합한 Controller를 찾아서 
+//		3.다시 DispatcherServlet으로 보낸 후 HandlerAdapter에게 보냄
+//		4.HandlerAdapter는 HandlerMapping이 찾아준 Controller안에 가장 적합한 메서드를 찾아줌
+//		5.Controller가 기능을 수행
+//     	[이 사이 DB도 왔다갔다]
+//		6.수행 한 후 결과를 가지고 DispatcherServlet 와서 ViewResolver에게 감
+//		7.ViewResolver가 결과에 가장 적합한 JSP를 찾아줌 
+//		8.View가 클라이언트에게 response함
+
+//        |         Web Context                   |
+//			      |         Spring Context        |
+//    요청 -> 필터 -> 디스파쳐서블릿 -> 인터셉터 -> 컨트롤러
