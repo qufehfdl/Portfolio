@@ -16,7 +16,6 @@ public class AsyncController {
 
 	private final AsyncService asyncService;
 
-	@Async
 	@GetMapping("/async")
 	public String myAsync() {
 		log.info("시작");
