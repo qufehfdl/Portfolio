@@ -30,7 +30,6 @@ public class HomeController {
 	public String home2(Model model) {
 		List<BoardInfoBean> board_list = topService.getTopMenuList();
 		model.addAttribute("board_list", board_list);
-
 		return "home";
 	}
 
