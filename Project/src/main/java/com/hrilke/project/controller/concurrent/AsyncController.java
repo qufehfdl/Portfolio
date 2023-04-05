@@ -1,6 +1,5 @@
 package com.hrilke.project.controller.concurrent;
 
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +15,6 @@ public class AsyncController {
 
 	private final AsyncService asyncService;
 
-	@Async
 	@GetMapping("/async")
 	public String myAsync() {
 		log.info("시작");
