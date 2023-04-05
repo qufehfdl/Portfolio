@@ -52,24 +52,24 @@
     - DB컬럼에 파일이름을 저장, 사용자가 파일을 올리지 않을 수도 있으므로 null을 허용했지만 <br> Mybatis에서 막음
        null을 허용하는 컬럼을 사용 할때는 반드시 타입을 명시하자 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/service/BoardService.java#L60)
 <hr>
-       
-3. Atomic 클래스와 ThreadLocal의 차이 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/RootAppContext.java#L42)
+
+3.  HTTP Message Converter / Argument Resolver
+    - JSON으로 요청이 올 때 자료형 타입이 맞지 않아 에러가 발생!! [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/HTTP_Test_Controller.java#L30)
+    - 자세한 원리[📝🔗](https://github.com/qufehfdl/Study/blob/main/SpringMVC#L155) 
+<hr>
+
+4. Atomic 클래스와 ThreadLocal의 차이 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/config/RootAppContext.java#L42)
 
 <hr>
 
-4. ajax로 여러 데이터를 받는 방법
+5. ajax로 여러 데이터를 받는 방법
     - onclick 이벤트에 자바스크립트 매개변수로 다수의 데이터 넘김 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/WEB-INF/views/board/read.jsp#L91)
     - 매개 변수로 받아서 처리 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/webapp/WEB-INF/views/board/read.jsp#L16)
 <hr>
 
-5. Mybatis의 @SelectKey를 사용해서 Controller에서 온 데이터를 교체해 다시 Controller에 반환시키는 방법
+6. Mybatis의 @SelectKey를 사용해서 Controller에서 온 데이터를 교체해 다시 Controller에 반환시키는 방법
     - 받아온 데이터를 insert가 실행 되기 전에 먼저 실행 [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/mapper/BoardMapper.java#L18)
     - 반환된 데이터를 이용해서 방금 작성한글을 바로 볼 수 있는 기능을 구현!
-<hr>
-
-6.  HTTP Message Converter / Argument Resolver
-    - JSON으로 요청이 올 때 자료형 타입이 맞지 않아 에러가 발생!! [📝🔗](https://github.com/qufehfdl/portfolio/blob/main/Project/src/main/java/com/hrilke/project/controller/HTTP_Test_Controller.java#L30)
-    - 자세한 원리[📝🔗](https://github.com/qufehfdl/Study/blob/main/SpringMVC#L155) 
 <hr>
 
 7. DeadLock 발생
