@@ -15,13 +15,13 @@ public class HTTP_Test_Controller {
 
 // 데이터를 보내는 3가지 형식
 	
-//	GET  : 앰퍼샌드(&)로 구분된 키-값 쌍으로 인코딩된다
+//  GET  : 앰퍼샌드(&)로 구분된 키-값 쌍으로 인코딩된다
 //		   메세지 바디없이 [URL]의 쿼리파라미터에 데이터를 포함해서 전달
 
 //  POST : content-type: application/x-www-form-urlencoded
 //		   메세지 [바디]에 쿼리파라미터 형식으로 전달
 
-//	raw(JSON,XML,TEXT..)는 메세지 바디에 데이터를 [직접!!] 담아서 전달 
+//  raw(JSON,XML,TEXT..)는 메세지 바디에 데이터를 [직접!!] 담아서 전달 
 
 	
 	@PostMapping("/converter")
