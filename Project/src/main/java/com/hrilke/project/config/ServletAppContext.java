@@ -47,7 +47,7 @@ import lombok.RequiredArgsConstructor;
 @ComponentScan("com.hrilke.project.dao")
 @PropertySource("/WEB-INF/properties/db.properties")
 @RequiredArgsConstructor
-@EnableAsync
+@EnableAsync 
 public class ServletAppContext implements WebMvcConfigurer {
 
 	@Value("${db.classname}")
@@ -68,7 +68,6 @@ public class ServletAppContext implements WebMvcConfigurer {
 
 //	@RequiredArgsConstructor를 적용하기위해 final로 설정하면 순환참조 에러 발생!
 //	생성자 주입 방식에서 스프링이 객체를 생성할 때 주입받아야 하는데 빈이 아직 생성되지 않았을 가능성이 있다
-//	두개의 필드는 Spring에서 Bean으로 등록하지 않음 세터로 주입받아야 함
 	private TopService topService;
 	private BoardService boardService;
 
@@ -221,9 +220,8 @@ public class ServletAppContext implements WebMvcConfigurer {
 //		7.ViewResolver가 결과에 가장 적합한 JSP를 찾아줌 
 //		8.View가 클라이언트에게 response함
  
-
 //         |              Web Context             |
-//		    	  |           Spring Context      |
+//		          |           Spring Context      |
 //    요청 -> 필터 -> 디스파쳐서블릿 -> 인터셉터 -> 컨트롤러
 
 
