@@ -10,7 +10,7 @@ import com.hrilke.project.service.concurrent.AsyncService;
 public class ThreadPoolConfig {
 
 	// ThreadPool : Thread를 허용된 개수 안에서 사용하도록 제한
-	// ThreadPoolTaskExecutor은 기본적으로 블로킹 방식으로 동작함!
+	// ThreadPoolTaskExecutor은 기본적으로 논블로킹 방식으로 동작함!
 	// 적절한 설정으로 작업 처리 성능을 최적화할 수 있다!
 	@Bean(name = "myExecutor")
 	public ThreadPoolTaskExecutor myExecutor() {
