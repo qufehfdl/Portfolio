@@ -19,6 +19,10 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class AtomicInstanceController {
 
+//    Atomic 클래스는 멀테스레드 환경에서 동기화 없이 안전하게 변수를 업데이트하게 해준다 [원자성을 보장해 줌] 
+//    내부적으로 비교-교환 연산(CAS)를 사용해서 현재값과 변경하려는 값이 같은지 비교 후 같으면 새로운 값으로 변경하고
+//    다르면 아무 일도 하지 않음 이 과정이 모든 스레드에서 일관적으로 수행된다!
+//    여러 스레드가 동시에 변수에 접근할 때 발생할 수 있는 문제(경쟁상태)를 방지하면서 변수를 변경할 수 있다
 	private final AtomicReference<ConcurrentTestBean> atomicReference;
 
 //  여러 스레드 요청이 오게 되면 ConcurrentTestBean 가 공유되어 동시성 문제 발생

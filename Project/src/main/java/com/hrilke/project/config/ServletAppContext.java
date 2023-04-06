@@ -222,8 +222,8 @@ public class ServletAppContext implements WebMvcConfigurer {
 //		8.View가 클라이언트에게 response함
  
 
-//          |              Web Context           |
-//		    |           Spring Context           |
+//         |              Web Context             |
+//		    	  |           Spring Context      |
 //    요청 -> 필터 -> 디스파쳐서블릿 -> 인터셉터 -> 컨트롤러
 
 

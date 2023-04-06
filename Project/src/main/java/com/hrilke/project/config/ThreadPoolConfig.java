@@ -14,6 +14,8 @@ public class ThreadPoolConfig {
 	// 적절한 설정으로 작업 처리 성능을 최적화할 수 있다!
 	@Bean(name = "myExecutor")
 	public ThreadPoolTaskExecutor myExecutor() {
+		
+		// 작업를 비동기적으로 실행하기 위해 스레드 풀을 관리하는 클래스 객체 생성
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 		
 		// 기본 쓰레드 개수 : 작업이 없다면 기본적으로 가지는 개수

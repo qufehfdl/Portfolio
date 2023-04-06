@@ -18,6 +18,9 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class ThreadLocalController {
 
+//  변수가 ThreadLocal에 저장되면 각 스레드는 변수의 별도 복사본을 갖고
+//  한 스레드에서 변수를 변경해도 다른 스레드의 변수 복사본에는 영향을 미치지 않는다
+//  이렇게 하면 공유 개체가 전역 변수로 선언된 경우에도 스레드로부터 안전하게 만들 수 있다
 // 	threadLocal은 스레드에 고유한 값이며 한 스레드에서 값을 설정하면 다른 스레드에서는 같은 값을 가져올 수 없다!!
 //	공유 객체를 스레드별로 분리해서 사용하자!
 	private final ThreadLocal<ConcurrentTestBean> threadLocal;
