@@ -1,5 +1,5 @@
 package com.hrilke.project.beans;
-
+ 
 import lombok.Getter;
 import lombok.Setter;
 
