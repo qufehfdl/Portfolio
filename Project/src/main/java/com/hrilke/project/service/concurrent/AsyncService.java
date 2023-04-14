@@ -40,7 +40,7 @@ public class AsyncService {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		log.info("test1 success" + Thread.currentThread().getName());
+		log.info("test1 success : " + Thread.currentThread().getName());
 	}
 
 	@Async("myExecutor")
@@ -50,7 +50,7 @@ public class AsyncService {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		log.info("test2 success" + Thread.currentThread().getName());
+		log.info("test2 success : " + Thread.currentThread().getName());
 	}
 
 }
