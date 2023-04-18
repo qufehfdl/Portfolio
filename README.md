@@ -90,7 +90,7 @@
 
 5. Spring (2) [📝🔗](https://github.com/qufehfdl/Study/blob/main/SPRING%EA%B3%B5%EB%B6%802)
 
-6. 그 외 공부 [📝🔗](https://github.com/qufehfdl/Study/blob/main/%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80%20%EA%B3%B5%EB%B6%80
+6. 그 외 공부 [📝🔗](https://github.com/qufehfdl/Study/blob/main/%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80%20%EA%B3%B5%EB%B6%80)
 
 <h2> 🌈 Issue </h2>
 
