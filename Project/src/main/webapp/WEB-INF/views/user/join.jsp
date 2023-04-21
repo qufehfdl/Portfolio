@@ -21,11 +21,37 @@
 			return
 		}
 		
+		/*  매개변수로 답글 순서와 실제 답글 번호를 받아오고 */ 
+	function modifyReply(index , reply_num) {
+/* id선택자가 id순서인 댓글의 값을 받아 와서 replyModify(수정할 댓글 내용)에 저장*/
+		var replyModify = $("#"+index).val();
+		$.ajax({
+			url : '${root}reply/modify/' + replyModify+"/"+reply_num,
+			type : 'get',
+			dataType : 'json',
+			success : function(result) {
+				alert("답글 수정을 완료했습니다😊")
+			}
+		})
+	}
+		
 // 		$.ajax({
 // 		    url: "~", // 클라이언트가 요청을 보낼 서버의 URL 주소
-// 		    type: "GET",                             // HTTP 요청 방식(GET, POST)
-// 		    data: { name: "태화" },                // HTTP 요청과 함께 서버로 보낼 데이터
-// 		    dataType: "json"                         // 서버에서 보내줄 데이터의 타입
+// 		    type: "GET",                             	// HTTP 요청 방식(GET, POST)
+// 		    data: { name: "태화" },                     // HTTP 요청과 함께 서버로 보낼 데이터
+// 		    dataType: "json",				// 서버에서 보내줄 데이터의 타입
+// 		    beforeSend :function() {				
+// 			"HTTP 요청전 수행할 코드"
+// 		    },
+// 		    success : function() {			// 콜백함수
+// 			"성공시 수행해야할 코드"
+// 		    },
+// 		    error :  function() {
+// 			"에러시 수행해야할 코드"
+// 		    },
+// 		    complete :  function() {
+// 			"완료시 수행되는 코드"
+// 		    },
 // 		})
 
 		$.ajax({
