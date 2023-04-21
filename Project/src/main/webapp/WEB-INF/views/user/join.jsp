@@ -21,20 +21,6 @@
 			return
 		}
 		
-		/*  매개변수로 답글 순서와 실제 답글 번호를 받아오고 */ 
-	function modifyReply(index , reply_num) {
-/* id선택자가 id순서인 댓글의 값을 받아 와서 replyModify(수정할 댓글 내용)에 저장*/
-		var replyModify = $("#"+index).val();
-		$.ajax({
-			url : '${root}reply/modify/' + replyModify+"/"+reply_num,
-			type : 'get',
-			dataType : 'json',
-			success : function(result) {
-				alert("답글 수정을 완료했습니다😊")
-			}
-		})
-	}
-		
 // 		$.ajax({
 // 		    url: "~", // 클라이언트가 요청을 보낼 서버의 URL 주소
 // 		    type: "GET",                             	// HTTP 요청 방식(GET, POST)
