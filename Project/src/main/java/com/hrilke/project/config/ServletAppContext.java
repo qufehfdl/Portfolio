@@ -1,5 +1,7 @@
 package com.hrilke.project.config;
 
+import javax.annotation.PostConstruct;
+
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -49,6 +51,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @EnableAsync 
 public class ServletAppContext implements WebMvcConfigurer {
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("컨테이너 시작");
+	}
 
 	@Value("${db.classname}")
 	private String db_classname;

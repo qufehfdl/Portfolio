@@ -22,12 +22,20 @@ a {
 	font-size: 35
 }
 
-#right_proc{
-font-size: 18;
-font-weight: bold;
+#right_proc {
+	font-size: 18;
+	font-weight: bold;
 }
-
 </style>
+<script>
+	$(document).ready(function () {
+		$('#search').click(function () {
+			if ($('#search2').val().length == 0 ) {
+				alert('글자를 입력해 주세요');
+			}
+		});
+	});
+</script>
 <meta charset="UTF-8">
 </head>
 <body>
@@ -52,11 +60,10 @@ font-weight: bold;
 							</c:otherwise>
 						</c:choose></td>
 				</tr>
-
 				<tr>
 					<td align="center" colspan="3">❓<input type="text"
-						placeholder="검색해주세용~" name="content_subject">
-						<button type="submit">검색</button></td>
+						placeholder="검색해주세용~" name="content_subject" id="search2">
+						<button type="submit" id="search">검색</button></td>
 				</tr>
 			</table>
 		</form>

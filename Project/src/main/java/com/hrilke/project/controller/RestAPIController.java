@@ -57,7 +57,7 @@ public class RestAPIController {
 		
 //		Spring boot를 사용한다면 Spring Webflux을 사용해서 WebClient 기능을 사용해보자
 //		RestTemplate 클래스 대신에 Spring에서 제공하는 WebClient를 사용하면 더 쉽게 API 호출이 가능
-//		비동기 및 반응형 HTTP 클라이언트이고   논 블로킹 방식으로 동작하므로 스레드 풀을 더욱 효율적으로 사용할 수 있다
+//		비동기 및 반응형 HTTP 클라이언트이고 논 블로킹 방식으로 동작하므로 스레드 풀을 더욱 효율적으로 사용할 수 있다
 		
 //		WebClient webClient = WebClient.builder().baseUrl(API_URL).build();
 //	    WeatherBean weatherBean = webClient.get().retrieve().bodyToMono(WeatherBean.class).block();
