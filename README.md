@@ -1,4 +1,4 @@
-<h3>😊 개인 공부를 정리해 두고 연습을 하는 프로젝트 입니다 </h3>
+<h3>😊 블로그형 개인 프로젝트 </h3>
 <div align="center">
 	<img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" />
 	<img src="https://img.shields.io/badge/Spring-Framework-%236DB33F?style=flat&logo=spring&logoColor=white" />
