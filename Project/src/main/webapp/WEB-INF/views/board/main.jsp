@@ -9,6 +9,10 @@
 	border-collapse: collapse;
 	border: 3px solid black;
 }
+a{
+text-decoration: none;
+
+}
 </style>
 <meta charset="UTF-8">
 </head>
