@@ -8,7 +8,7 @@
 	<img src="https://img.shields.io/badge/-MySQL-%234479A1?style=flat&logo=MySQL&logoColor=white" />
 </div>
 
- - 다음 프로젝트 : Vue.js + Spring Boot 를 사용해서 사진커뮤니티 웹앱작제작
+ - 다음 프로젝트 : Vue.js + Spring Boot 를 사용해서 사진커뮤니티 웹앱 제작
  - AWS를 이용해 배포 [📝🔗](http://54.180.140.215:8080/Project/home)<br>
  <hr>
 <h2>🌈주요 로직</h2>
