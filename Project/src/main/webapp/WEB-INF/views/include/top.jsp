@@ -5,9 +5,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-
-</style>
 <script>
 	$(document).ready(function() {
 		$('#search').click(function() {
@@ -17,13 +14,13 @@
 		});
 	});
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary"
@@ -37,9 +34,8 @@
 			</button>
 			<a class="navbar-brand" href="${root }" style="color: powderblue">🔭태화의
 				블로그</a>
-			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<div class="navbar-collapse" id="navbarTogglerDemo03">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-wrap">
 					<c:forEach var="obj" items="${topMenuList }">
 						<li class="nav-item"><a
 							href="${root }board/main?board_category=${obj.board_category}"
@@ -72,33 +68,5 @@
 			</div>
 		</div>
 	</nav>
-	<%-- 	<div>
-		<form action="${root}board/searchList" method="post">
-			<table style="width: 100%;">
-				<tr>
-					<td width="200"><a href="${root }" id="baner"><b>🔭태화의
-								공부공부</b></a></td>
-					<td><c:forEach var="obj" items="${topMenuList }">
-							<a href="${root }board/main?board_category=${obj.board_category}"
-								id="board_name"><b>🌼 ${obj.board_name }</b></a>&nbsp;&nbsp;
-					</c:forEach></td>
-					<td align="right"><c:choose>
-							<c:when test="${loginUserBean.userLogin == true }">
-								<a href="${root }user/modify" id="right_proc">🟨정보수정</a>&nbsp;&nbsp; 
-					<a href="${root }user/logout" id="right_proc">🟩로그아웃</a>
-							</c:when>
-							<c:otherwise>
-								<a href="${root }user/login" id="right_proc">🟦로그인</a>&nbsp;&nbsp; 
-					<a href="${root }user/join" id="right_proc">🟪회원가입</a>
-							</c:otherwise>
-						</c:choose></td>
-				</tr>
-				<tr>
-					<td align="center" colspan="3">❓</td>
-				</tr>
-			</table>
-		</form>
-	</div>
-	<hr> --%>
 </body>
 </html>
