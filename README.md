@@ -10,7 +10,7 @@
 
  
  - AWS를 이용해 배포 [📝🔗](http://54.180.140.215:8080/Project/home)<br>
- - 다음 프로젝트 : Vue.js + Spring Boot 를 사용해서 사진커뮤니티 웹앱 제작중! [🥲](https://gitgub.com/qufehfdl/PhotoBox)
+ - 다음 프로젝트 : Vue.js + Spring Boot 를 사용해서 사진커뮤니티 웹앱 제작중! [🥲](https://github.com/qufehfdl/PhotoBox)
  <hr>
 <h2>🌈주요 로직</h2>
 
