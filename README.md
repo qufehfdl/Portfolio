@@ -96,6 +96,6 @@
 
 3. Spring MVC [📝🔗](https://velog.io/@hth1991/Spring-MVC)
 
-4. Spring (1) [📝🔗](https://velog.io/@hth1991/Spring)
+4. Spring [📝🔗](https://velog.io/@hth1991/Spring)
 
 5. 그 외 공부 [📝🔗](https://velog.io/@hth1991/%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80-%EA%B3%B5%EB%B6%80)
