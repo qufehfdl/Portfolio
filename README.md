@@ -90,16 +90,12 @@
 
 <h2>🌈공부 정리</h2>
 
-1. JAVA [📝🔗](https://github.com/qufehfdl/Study/blob/main/JAVA%EA%B3%B5%EB%B6%80)
+1. JAVA [📝🔗](https://velog.io/@hth1991/JAVA-%EA%B8%B0%EB%B3%B8)
 
-2. JSP [📝🔗](https://github.com/qufehfdl/Study/blob/main/JSP%EA%B3%B5%EB%B6%80)
+2. JSP [📝🔗](https://velog.io/@hth1991?tag=jsp)
 
-3. Spring MVC [📝🔗](https://github.com/qufehfdl/Study/blob/main/SpringMVC)
+3. Spring MVC [📝🔗](https://velog.io/@hth1991/Spring-MVC)
 
-4. Spring (1) [📝🔗](https://github.com/qufehfdl/Study/blob/main/SPRING%EA%B3%B5%EB%B6%801)
+4. Spring (1) [📝🔗](https://velog.io/@hth1991/Spring)
 
-5. Spring (2) [📝🔗](https://github.com/qufehfdl/Study/blob/main/SPRING%EA%B3%B5%EB%B6%802)
-
-6. 그 외 공부 [📝🔗](https://github.com/qufehfdl/Study/blob/main/%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80%20%EA%B3%B5%EB%B6%80)
-
-
+5. 그 외 공부 [📝🔗](https://velog.io/@hth1991/%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80-%EA%B3%B5%EB%B6%80)
